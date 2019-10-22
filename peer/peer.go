@@ -15,13 +15,12 @@ func (id SJID) Validate() error {
 	if id == SJID("") {
 		return ErrEmptyPeerID
 	}
-
 	return nil
 }
 
-// IDSlice for sorting peers
-type IDSlice []SJID
+// SJIDSlice for sorting peers
+type SJIDSlice []SJID
 
-func (es IDSlice) Len() int           { return len(es) }
-func (es IDSlice) Swap(i, j int)      { es[i], es[j] = es[j], es[i] }
-func (es IDSlice) Less(i, j int) bool { return string(es[i]) < string(es[j]) }
+func (es SJIDSlice) Len() int           { return len(es) }
+func (es SJIDSlice) Swap(i, j int)      { es[i], es[j] = es[j], es[i] }
+func (es SJIDSlice) Less(i, j int) bool { return string(es[i]) < string(es[j]) }
